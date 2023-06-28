@@ -7,7 +7,7 @@
             const rollNo = prompt("Enter rollNumber")
             if(rollNo){
                 const xhr = new XMLHttpRequest()// http request object
-                xhr.open('GET',`http://localhost:3003/${rollNo}`) // open()initializes the request
+                xhr.open('GET',`https://cute-jade-worm-belt.cyclic.app/${rollNo}`) // open()initializes the request
                 xhr.send() //sends the request to the server.
 
                 xhr.onload=function(){
