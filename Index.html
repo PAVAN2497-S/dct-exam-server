@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> EXAM RESULTS </title>
+    </head>
+    <body>
+        <script>
+            const rollNo = prompt("Enter rollNumber")
+            if(rollNo){
+                const xhr = new XMLHttpRequest()// http request object
+                xhr.open('GET',`http://localhost:3003/${rollNo}`) // open()initializes the request
+                xhr.send() //sends the request to the server.
+
+                xhr.onload=function(){
+                    const result= JSON.parse(xhr.responseText)
+                    if(result.hasOwnProperty('result_grade')){
+                        alert(`Congrats You Scored Grade ${result.result_grade}`)
+                    }else{
+                        alert('record not found')
+                    }
+                }
+            }
+
+         </script>
+    </body>
+
+</html>
